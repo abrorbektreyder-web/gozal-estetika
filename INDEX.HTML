@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>GÜZAL ESTETIKA — Premium Go‘zallik Saloni</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GÜZAL ESTETIKA — Andijondagi premium kosmetologiya va estetik xizmatlar.">
+<meta name="keywords" content="kosmetologiya, botoks, spa, yuz parvarishi, Andijon">
+<meta name="author" content="GÜZAL ESTETIKA">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#071423;
+  --bg2:#0b1f3a;
+  --gold:#e7c873;
+  --text:#e6ecf2;
+  --muted:#b8c2cc;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Nunito Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+h1,h2,h3{font-family:'Playfair Display',serif}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(7,20,35,.75),rgba(7,20,35,.9)),
+    url("images/hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+.hero h1{
+  font-size:clamp(40px,6vw,72px);
+  letter-spacing:3px;
+}
+.hero p{
+  color:var(--muted);
+  margin:20px 0 35px;
+}
+.hero-buttons{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 40px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:.35s;
+}
+.btn-gold{
+  background:linear-gradient(90deg,#f6c56b,#e7b955);
+  color:#081427;
+  box-shadow:0 0 30px rgba(231,200,115,.45);
+}
+.btn-gold:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+.btn-outline{
+  border:2px solid var(--gold);
+  color:var(--gold);
+}
+.btn-outline:hover{
+  background:var(--gold);
+  color:#081427;
+}
+
+/* ===== SECTION ===== */
+section{padding:90px 8%}
+section h2{
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:50px;
+  font-size:36px;
+}
+
+/* ===== SERVICES ===== */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:var(--bg2);
+  padding:35px;
+  border-radius:22px;
+  text-align:center;
+  transition:.35s;
+}
+.card:hover{transform:translateY(-8px)}
+.card h3{color:var(--gold);margin-bottom:12px}
+
+/* ===== GALLERY SLIDER ===== */
+#gallery{overflow:hidden}
+.gallery-track{
+  display:flex;
+  gap:24px;
+  animation:slide 18s linear infinite;
+}
+.gallery-track img{
+  width:380px;
+  height:260px;
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+}
+@keyframes slide{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+iframe{
+  width:100%;
+  height:360px;
+  border:0;
+  border-radius:22px;
+}
+.certificate{
+  background:var(--bg2);
+  padding:20px;
+  border-radius:22px;
+  text-align:center;
+}
+.certificate img{
+  width:100%;
+  border-radius:16px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 8%;
+  background:#050e1b;
+  margin-top:80px;
+}
+.footer-links{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.ig{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .contact{grid-template-columns:1fr}
+  .gallery-track img{width:300px;height:220px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>GÜZAL ESTETIKA</h1>
+    <p>Go‘zallik, ishonch va nafislik uyg‘unligi</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-gold">
+        <i class="fa-solid fa-phone"></i> Bog‘lanish
+      </a>
+      <a href="#gallery" class="btn btn-outline">
+        <i class="fa-regular fa-images"></i> Galereya
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section>
+<h2>Xizmatlar</h2>
+<div class="services">
+  <div class="card"><h3>Yuz parvarishi</h3><p>Terini chuqur tozalash</p></div>
+  <div class="card"><h3>Botoks terapiya</h3><p>Ajinlarga qarshi muolaja</p></div>
+  <div class="card"><h3>Spa & Massaj</h3><p>Dam olish va tiklanish</p></div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>Galereya</h2>
+<div class="gallery-track">
+  <img src="images/gallery-1.jpg">
+  <img src="images/gallery-2.jpg">
+  <img src="images/gallery-3.jpg">
+  <img src="images/gallery-4.jpg">
+  <img src="images/gallery-5.jpg">
+  <img src="images/gallery-6.jpg">
+  <!-- duplicate -->
+  <img src="images/gallery-1.jpg">
+  <img src="images/gallery-2.jpg">
+  <img src="images/gallery-3.jpg">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Aloqa</h2>
+<div class="contact">
+  <iframe src="https://www.google.com/maps?q=Andijan&output=embed"></iframe>
+
+  <div class="certificate">
+    <img src="images/certificate.jpg" alt="Premium sertifikat">
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><b>Manzil:</b> Andijon sh., S. Mashqoq ko‘chasi 10</p>
+  <p><b>Telefon:</b> +998 90 544 47 44</p>
+  <div class="footer-links">
+    <a class="ig" href="https://www.instagram.com/guzal_estetikaa" target="_blank">
+      <i class="fa-brands fa-instagram"></i> @guzal_estetikaa
+    </a>
+  </div>
+  <p style="margin-top:20px;color:#888">© 2026 GÜZAL ESTETIKA</p>
+</footer>
+
+</body>
+</html>
