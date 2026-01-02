@@ -2,12 +2,12 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<title>GÜZAL ESTETIKA — Premium Go‘zallik Saloni</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GÜZAL ESTETIKA — Premium Go‘zallik Saloni</title>
 
 <meta name="description" content="GÜZAL ESTETIKA — Andijon shahar, Semashqo ko‘chasi 10 manzilida joylashgan premium go‘zallik saloni.">
-<meta name="theme-color" content="#071423">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#071423">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,198 +20,241 @@
 <!-- SEO Schema -->
 <script type="application/ld+json">
 {
- "@context":"https://schema.org",
- "@type":"BeautySalon",
- "name":"GÜZAL ESTETIKA",
- "address":{
-   "@type":"PostalAddress",
-   "streetAddress":"Semashqo ko‘chasi 10",
-   "addressLocality":"Andijon shahar",
-   "addressCountry":"UZ"
- },
- "telephone":"+998905444744",
- "sameAs":["https://www.instagram.com/guzal_estetikaa"]
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "GÜZAL ESTETIKA",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Semashqo ko‘chasi 10",
+    "addressLocality": "Andijon shahar",
+    "addressCountry": "UZ"
+  },
+  "telephone": "+998905444744",
+  "sameAs": ["https://www.instagram.com/guzal_estetikaa"]
 }
 </script>
 
 <style>
 :root{
- --bg:#071423;
- --bg2:#0B1F3A;
- --gold:#E7C873;
- --text:#E6ECF2;
- --muted:#B8C2CC;
+  --bg:#071423;
+  --bg2:#0B1F3A;
+  --gold:#E7C873;
+  --text:#E6ECF2;
+  --muted:#B8C2CC;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
- font-family:'Nunito Sans',sans-serif;
- background:linear-gradient(180deg,var(--bg),#050E1B);
- color:var(--text);
- overflow-x:hidden;
+  font-family:'Nunito Sans',sans-serif;
+  background:linear-gradient(180deg,var(--bg),#050E1B);
+  color:var(--text);
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero{
- min-height:100vh;
- position:relative;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- overflow:hidden;
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  overflow:hidden;
 }
-.hero::before{
- content:"";
- position:absolute;
- inset:0;
- background:
-   linear-gradient(rgba(5,14,27,.55),rgba(5,14,27,.9)),
-   url("images/hero.jpg") center/cover no-repeat;
- animation:heroZoom 18s ease-in-out infinite alternate;
- will-change:transform;
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(5,14,27,.55),rgba(5,14,27,.85)),
+    url("images/hero.jpg") center/cover no-repeat;
+  animation: heroZoom 14s ease-in-out infinite alternate;
+  z-index:0;
 }
+
 @keyframes heroZoom{
- from{transform:scale(1)}
- to{transform:scale(1.02)}
+  from{transform:scale(1)}
+  to{transform:scale(1.03)}
 }
+
 .hero-content{
- position:relative;
- z-index:2;
- animation:fadeUp 1.2s ease both;
+  position:relative;
+  z-index:1;
+  animation: fadeUp 1.2s ease forwards;
 }
-@keyframes fadeUp{
- from{opacity:0;transform:translateY(40px)}
- to{opacity:1;transform:none}
-}
+
 .hero h1{
- font-family:'Playfair Display',serif;
- font-size:clamp(42px,6vw,72px);
- letter-spacing:3px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,6vw,72px);
+  letter-spacing:3px;
 }
+
 .hero p{
- margin:18px 0 32px;
- color:var(--muted);
+  margin:16px 0 32px;
+  color:var(--muted);
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
 .hero-buttons{
- display:flex;
- gap:20px;
- justify-content:center;
- flex-wrap:wrap;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
+
 .btn{
- padding:14px 42px;
- border-radius:50px;
- font-weight:700;
- text-decoration:none;
- display:inline-flex;
- align-items:center;
- gap:10px;
- transition:transform .25s, box-shadow .25s, background .25s;
- touch-action:manipulation;
+  position:relative;
+  padding:14px 42px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  touch-action:manipulation;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
 }
+
+/* GOLD */
 .btn-gold{
- background:linear-gradient(90deg,#f6c56b,#e7b955);
- color:#081427;
- box-shadow:0 10px 30px rgba(231,200,115,.45);
+  background:linear-gradient(90deg,#f6c56b,#e7b955);
+  color:#081427;
+  box-shadow:0 0 0 rgba(231,200,115,0);
 }
+
+.btn-gold:hover{
+  transform:scale(1.06);
+  box-shadow:0 0 40px rgba(231,200,115,.9);
+}
+
+.btn-gold:active{
+  transform:scale(.94);
+  box-shadow:0 0 25px rgba(231,200,115,.9);
+}
+
+/* OUTLINE */
 .btn-outline{
- border:2px solid var(--gold);
- color:var(--gold);
-}
-.btn:active{
- transform:scale(.94);
- box-shadow:0 0 30px rgba(231,200,115,.9);
+  border:2px solid var(--gold);
+  color:var(--gold);
 }
 
-/* ===== SECTION ===== */
+.btn-outline:hover{
+  background:var(--gold);
+  color:#081427;
+  transform:scale(1.06);
+  box-shadow:0 0 35px rgba(231,200,115,.8);
+}
+
+.btn-outline:active{
+  transform:scale(.94);
+}
+
+/* ================= SERVICES ================= */
 section{padding:90px 8%}
+
 h2{
- font-family:'Playfair Display',serif;
- text-align:center;
- color:var(--gold);
- margin-bottom:40px;
+  font-family:'Playfair Display',serif;
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:40px;
 }
 
-/* ===== SERVICES ===== */
 .services{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
- gap:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
+
 .card{
- background:var(--bg2);
- padding:36px;
- border-radius:22px;
- text-align:center;
+  background:var(--bg2);
+  padding:36px;
+  border-radius:22px;
+  text-align:center;
 }
 
-/* ===== GALLERY ===== */
-#gallery{overflow:hidden}
-.gallery-track{
- display:flex;
- gap:24px;
- will-change:transform;
-}
-@media (hover:hover){
- .gallery-track{
-   animation:slide 14s linear infinite;
- }
-}
-@keyframes slide{
- from{transform:translate3d(0,0,0)}
- to{transform:translate3d(-50%,0,0)}
-}
-.gallery-track img{
- width:320px;
- height:220px;
- object-fit:cover;
- border-radius:18px;
- flex-shrink:0;
+/* ================= GALLERY ================= */
+.gallery{
+  display:flex;
+  gap:24px;
+  overflow:hidden;
 }
 
-/* ===== CONTACT ===== */
+.gallery img{
+  width:340px;
+  height:230px;
+  object-fit:cover;
+  border-radius:18px;
+  opacity:.85;
+  animation: fadeSlide 18s ease-in-out infinite;
+}
+
+@keyframes fadeSlide{
+  0%{opacity:.4}
+  20%{opacity:1}
+  80%{opacity:1}
+  100%{opacity:.4}
+}
+
+/* Mobile: static */
+@media (max-width:900px){
+  .gallery{overflow-x:auto}
+  .gallery img{animation:none}
+}
+
+/* ================= CONTACT ================= */
 .contact{
- display:grid;
- grid-template-columns:1.2fr .8fr;
- gap:40px;
- align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
+
 .map{
- width:100%;
- height:380px;
- border:0;
- border-radius:22px;
+  width:100%;
+  height:360px;
+  border:0;
+  border-radius:22px;
 }
+
 .cert{
- background:var(--bg2);
- padding:20px;
- border-radius:22px;
- border-left:4px solid var(--gold);
+  background:var(--bg2);
+  padding:22px;
+  border-radius:22px;
+  border-left:4px solid var(--gold);
 }
+
 .cert img{
- width:100%;
- border-radius:14px;
+  width:100%;
+  border-radius:14px;
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer{
- margin-top:80px;
- padding:40px 8%;
- text-align:center;
- color:var(--muted);
-}
-footer a{
- color:var(--gold);
- text-decoration:none;
- font-weight:600;
+  margin-top:80px;
+  padding:40px 8%;
+  background:#050E1B;
+  text-align:center;
+  color:var(--muted);
 }
 
-/* ===== MOBILE ===== */
+footer a{
+  color:var(--gold);
+  text-decoration:none;
+}
+
+/* ================= ANIM ================= */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
 @media(max-width:900px){
- .contact{grid-template-columns:1fr}
- .gallery-track{animation:none}
+  .contact{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -219,39 +262,42 @@ footer a{
 <body>
 
 <!-- HERO -->
-<div class="hero">
- <div class="hero-content">
-   <h1>GÜZAL ESTETIKA</h1>
-   <p>Go‘zallik, ishonch va nafislik uyg‘unligi</p>
-   <div class="hero-buttons">
-     <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-phone"></i> Bog‘lanish</a>
-     <a href="#gallery" class="btn btn-outline"><i class="fa-regular fa-images"></i> Galereya</a>
-   </div>
- </div>
-</div>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>GÜZAL ESTETIKA</h1>
+    <p>Go‘zallik, ishonch va nafislik uyg‘unligi</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-gold">
+        <i class="fa-solid fa-phone"></i> Bog‘lanish
+      </a>
+      <a href="#gallery" class="btn btn-outline">
+        <i class="fa-regular fa-images"></i> Galereya
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section>
 <h2>Xizmatlar</h2>
 <div class="services">
- <div class="card">Yuz parvarishi</div>
- <div class="card">Botoks terapiya</div>
- <div class="card">Spa & Massaj</div>
+  <div class="card">Yuz parvarishi</div>
+  <div class="card">Botoks terapiya</div>
+  <div class="card">Spa & Massaj</div>
 </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
 <h2>Galereya</h2>
-<div class="gallery-track">
- <img src="images/gallery-1.jpg" loading="lazy">
- <img src="images/gallery-2.jpg" loading="lazy">
- <img src="images/gallery-3.jpg" loading="lazy">
- <img src="images/gallery-4.jpg" loading="lazy">
- <img src="images/gallery-5.jpg" loading="lazy">
- <img src="images/gallery-6.jpg" loading="lazy">
- <img src="images/gallery-1.jpg" loading="lazy">
- <img src="images/gallery-2.jpg" loading="lazy">
+<div class="gallery">
+  <img src="images/gallery1.jpg" loading="lazy">
+  <img src="images/gallery2.jpg" loading="lazy">
+  <img src="images/gallery3.jpg" loading="lazy">
+  <img src="images/gallery4.jpg" loading="lazy">
+  <img src="images/gallery5.jpg" loading="lazy">
+  <img src="images/gallery6.jpg" loading="lazy">
 </div>
 </section>
 
@@ -259,24 +305,24 @@ footer a{
 <section id="contact">
 <h2>Aloqa</h2>
 <div class="contact">
- <iframe class="map" loading="lazy"
-   src="https://www.google.com/maps?q=Andijon%20Semashqo%20kochasi%2010&output=embed"></iframe>
-
- <div class="cert">
-   <img src="images/certificate.jpg" alt="Premium sertifikat">
- </div>
+  <iframe class="map" loading="lazy"
+    src="https://www.google.com/maps?q=Andijon%20Semashqo%20ko‘chasi%2010&output=embed">
+  </iframe>
+  <div class="cert">
+    <img src="images/certificate.jpg" alt="Rasmiy sertifikat">
+  </div>
 </div>
 </section>
 
 <footer>
- <p><b>Manzil:</b> Andijon shahar, Semashqo ko‘chasi 10</p>
- <p><b>Telefon:</b> +998 90 544 47 44</p>
- <p>
-   <a href="https://www.instagram.com/guzal_estetikaa" target="_blank">
-     <i class="fa-brands fa-instagram"></i> @guzal_estetikaa
-   </a>
- </p>
- <p>© 2026 GÜZAL ESTETIKA</p>
+  <p><b>Manzil:</b> Andijon shahar, Semashqo ko‘chasi 10</p>
+  <p><b>Telefon:</b> +998 90 544 47 44</p>
+  <p>
+    <a href="https://www.instagram.com/guzal_estetikaa" target="_blank">
+      <i class="fa-brands fa-instagram"></i> @guzal_estetikaa
+    </a>
+  </p>
+  <p>© 2026 GÜZAL ESTETIKA</p>
 </footer>
 
 </body>
