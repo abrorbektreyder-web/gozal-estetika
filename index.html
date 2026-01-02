@@ -6,33 +6,12 @@
 <title>GÜZAL ESTETIKA — Premium Go‘zallik Saloni</title>
 
 <meta name="description" content="GÜZAL ESTETIKA — Andijon shahar, Semashqo ko‘chasi 10 manzilida joylashgan premium go‘zallik saloni.">
-<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#071423">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- SEO schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BeautySalon",
-  "name": "GÜZAL ESTETIKA",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Semashqo ko‘chasi 10",
-    "addressLocality": "Andijon shahar",
-    "addressCountry": "UZ"
-  },
-  "telephone": "+998905444744",
-  "sameAs": ["https://www.instagram.com/guzal_estetikaa"]
-}
-</script>
 
 <style>
 :root{
@@ -43,14 +22,13 @@
   --muted:#B8C2CC;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   font-family:'Nunito Sans',sans-serif;
   background:linear-gradient(180deg,var(--bg),#050E1B);
   color:var(--text);
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero{
   min-height:100vh;
   background:
@@ -62,25 +40,18 @@ body{
   text-align:center;
   padding:24px;
 }
-
 .hero h1{
   font-family:'Playfair Display',serif;
   font-size:clamp(38px,6vw,72px);
-  letter-spacing:3px;
 }
-.hero p{
-  margin:16px 0 34px;
-  color:var(--muted);
-}
+.hero p{margin:16px 0 32px;color:var(--muted)}
 
-/* Buttons */
 .hero-buttons{
   display:flex;
   gap:16px;
   justify-content:center;
   flex-wrap:wrap;
 }
-
 .btn{
   padding:14px 40px;
   border-radius:50px;
@@ -89,30 +60,22 @@ body{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  transition:.25s;
+  cursor:pointer;
+  transition:transform .15s, box-shadow .15s;
   touch-action:manipulation;
 }
-
 .btn-gold{
   background:linear-gradient(90deg,#f6c56b,#e7b955);
   color:#081427;
-  box-shadow:0 10px 30px rgba(231,200,115,.45);
+  box-shadow:0 8px 25px rgba(231,200,115,.4);
 }
 .btn-outline{
   border:2px solid var(--gold);
   color:var(--gold);
 }
+.btn:hover{transform:scale(1.04)}
+.btn:active{transform:scale(.92)}
 
-/* hover + mobile touch */
-.btn:hover{transform:translateY(-3px)}
-@media (hover:none){
-  .btn:active{
-    transform:scale(.94);
-    box-shadow:0 0 35px rgba(231,200,115,.9);
-  }
-}
-
-/* ================= SECTION ================= */
 section{padding:90px 8%}
 h2{
   font-family:'Playfair Display',serif;
@@ -121,7 +84,7 @@ h2{
   margin-bottom:40px;
 }
 
-/* ================= SERVICES ================= */
+/* SERVICES */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -134,49 +97,39 @@ h2{
   text-align:center;
 }
 
-/* ================= GALLERY ================= */
+/* GALLERY */
 #gallery{overflow:hidden}
-.slider{overflow:hidden}
-
+.slider{
+  overflow:hidden;
+  position:relative;
+}
 .slider-track{
   display:flex;
-  gap:20px;
-  will-change:transform;
-  animation:slide 11s linear infinite;
+  transition:transform .4s ease;
 }
-
 .slider-track img{
-  width:320px;
+  width:100vw;
+  max-width:360px;
   height:220px;
   object-fit:cover;
   border-radius:18px;
+  margin-right:20px;
   flex-shrink:0;
 }
 
-@keyframes slide{
-  from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-50%,0,0)}
-}
-
-@media(max-width:900px){
-  .slider-track{animation-duration:6s;}
-}
-
-/* ================= CONTACT ================= */
+/* CONTACT */
 .contact{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
   align-items:center;
 }
-
 .map{
   width:100%;
   height:360px;
   border:0;
   border-radius:22px;
 }
-
 .certificate{
   background:var(--bg2);
   padding:20px;
@@ -189,12 +142,6 @@ h2{
   border-radius:14px;
   margin-bottom:12px;
 }
-.certificate p{
-  color:var(--gold);
-  font-weight:600;
-}
-
-/* ================= FOOTER ================= */
 footer{
   margin-top:80px;
   padding:40px 8%;
@@ -202,10 +149,7 @@ footer{
   text-align:center;
   color:var(--muted);
 }
-footer a{
-  color:var(--gold);
-  text-decoration:none;
-}
+footer a{color:var(--gold);text-decoration:none}
 
 @media(max-width:900px){
   .contact{grid-template-columns:1fr}
@@ -215,101 +159,86 @@ footer a{
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div>
     <h1>GÜZAL ESTETIKA</h1>
     <p>Go‘zallik, ishonch va nafislik uyg‘unligi</p>
-
     <div class="hero-buttons">
-      <a href="#contact" class="btn btn-gold">
-        <i class="fa-solid fa-phone"></i> Bog‘lanish
-      </a>
-      <a href="#gallery" class="btn btn-outline">
-        <i class="fa-regular fa-images"></i> Galereya
-      </a>
+      <a class="btn btn-gold" href="#contact"><i class="fa-solid fa-phone"></i>Bog‘lanish</a>
+      <a class="btn btn-outline" href="#gallery"><i class="fa-regular fa-images"></i>Galereya</a>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section>
 <h2>Xizmatlar</h2>
 <div class="services">
-  <div class="card"><h3>Yuz parvarishi</h3><p>Terini chuqur tozalash</p></div>
-  <div class="card"><h3>Botoks terapiya</h3><p>Ajinlarga qarshi muolaja</p></div>
-  <div class="card"><h3>Spa & Massaj</h3><p>Dam olish va tiklanish</p></div>
+  <div class="card">Yuz parvarishi</div>
+  <div class="card">Botoks terapiya</div>
+  <div class="card">Spa & Massaj</div>
 </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
 <h2>Galereya</h2>
 <div class="slider">
-  <div class="slider-track" id="sliderTrack">
+  <div class="slider-track" id="track">
     <img loading="lazy" src="images/gallery-1.jpg">
     <img loading="lazy" src="images/gallery-2.jpg">
     <img loading="lazy" src="images/gallery-3.jpg">
     <img loading="lazy" src="images/gallery-4.jpg">
     <img loading="lazy" src="images/gallery-5.jpg">
     <img loading="lazy" src="images/gallery-6.jpg">
-    <!-- duplicate -->
-    <img loading="lazy" src="images/gallery-1.jpg">
-    <img loading="lazy" src="images/gallery-2.jpg">
-    <img loading="lazy" src="images/gallery-3.jpg">
   </div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>Aloqa</h2>
 <div class="contact">
-  <iframe class="map"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps?q=Andijon%20Semashqo%20kochasi%2010&output=embed">
-  </iframe>
-
+  <iframe class="map" loading="lazy"
+    src="https://www.google.com/maps?q=Andijon%20Semashqo%20kochasi%2010&output=embed"></iframe>
   <div class="certificate">
-    <img loading="lazy" src="images/certificate.jpg" alt="GÜZAL ESTETIKA rasmiy sertifikati">
-    <p>Rasmiy kosmetologiya sertifikati</p>
+    <img loading="lazy" src="images/certificate.jpg">
+    <p>Rasmiy sertifikat</p>
   </div>
 </div>
 </section>
 
 <footer>
-  <p><b>Manzil:</b> Andijon shahar, Semashqo ko‘chasi 10</p>
-  <p><b>Telefon:</b> +998 90 544 47 44</p>
-  <p>
-    <a href="https://www.instagram.com/guzal_estetikaa" target="_blank">
-      <i class="fa-brands fa-instagram"></i> @guzal_estetikaa
-    </a>
-  </p>
-  <p>© 2026 GÜZAL ESTETIKA</p>
+<p><b>Manzil:</b> Andijon shahar, Semashqo ko‘chasi 10</p>
+<p><b>Telefon:</b> +998 90 544 47 44</p>
+<p><a href="https://www.instagram.com/guzal_estetikaa" target="_blank">
+<i class="fa-brands fa-instagram"></i> @guzal_estetikaa</a></p>
 </footer>
 
-<!-- ================= JS: SWIPE ================= -->
 <script>
-const track = document.getElementById('sliderTrack');
-let startX=0, currentX=0, dragging=false;
+const track=document.getElementById('track');
+const imgs=track.children;
+let i=0;
+let interval;
+const total=imgs.length;
+const speed=7000/total;
 
+function slide(){
+  i=(i+1)%total;
+  const w=imgs[0].offsetWidth+20;
+  track.style.transform=`translateX(${-i*w}px)`;
+}
+function start(){interval=setInterval(slide,speed);}
+function stop(){clearInterval(interval);}
+start();
+
+// swipe
+let startX=0;
 track.addEventListener('touchstart',e=>{
-  startX=e.touches[0].clientX;
-  dragging=true;
-  track.style.animationPlayState='paused';
+  stop(); startX=e.touches[0].clientX;
 });
-
-track.addEventListener('touchmove',e=>{
-  if(!dragging)return;
-  currentX=e.touches[0].clientX-startX;
-  track.style.transform=`translate3d(${currentX}px,0,0)`;
-});
-
-track.addEventListener('touchend',()=>{
-  dragging=false;
-  track.style.transform='';
-  track.style.animationPlayState='running';
+track.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-startX;
+  if(dx>50)i=Math.max(i-1,0);
+  if(dx<-50)i=Math.min(i+1,total-1);
+  slide(); start();
 });
 </script>
 
