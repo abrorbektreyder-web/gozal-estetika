@@ -3,39 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <title>GÜZAL ESTETIKA — Premium Go‘zallik Saloni</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GÜZAL ESTETIKA — Andijondagi premium kosmetologiya va estetik xizmatlar.">
-<meta name="keywords" content="kosmetologiya, botoks, spa, yuz parvarishi, Andijon">
-<meta name="author" content="GÜZAL ESTETIKA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Fonts -->
+<meta name="description" content="GÜZAL ESTETIKA — Andijon shahar Semashqo ko‘chasi 10 manzilida joylashgan premium go‘zallik saloni.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#071423">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- SEO: Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "GÜZAL ESTETIKA",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Semashqo ko‘chasi 10",
+    "addressLocality": "Andijon shahar",
+    "addressCountry": "UZ"
+  },
+  "telephone": "+998905444744",
+  "sameAs": ["https://www.instagram.com/guzal_estetikaa"]
+}
+</script>
 
 <style>
 :root{
   --bg:#071423;
-  --bg2:#0b1f3a;
-  --gold:#e7c873;
-  --text:#e6ecf2;
-  --muted:#b8c2cc;
+  --bg2:#0B1F3A;
+  --gold:#E7C873;
+  --text:#E6ECF2;
+  --muted:#B8C2CC;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Nunito Sans',sans-serif;
-  background:var(--bg);
+  background:linear-gradient(180deg,var(--bg),#050E1B);
   color:var(--text);
-  line-height:1.6;
 }
-h1,h2,h3{font-family:'Playfair Display',serif}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   min-height:100vh;
   background:
-    linear-gradient(rgba(7,20,35,.75),rgba(7,20,35,.9)),
+    linear-gradient(rgba(5,14,27,.65),rgba(5,14,27,.9)),
     url("images/hero.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
@@ -44,56 +57,59 @@ h1,h2,h3{font-family:'Playfair Display',serif}
   padding:20px;
 }
 .hero h1{
+  font-family:'Playfair Display',serif;
   font-size:clamp(40px,6vw,72px);
   letter-spacing:3px;
 }
-.hero p{
-  color:var(--muted);
-  margin:20px 0 35px;
-}
+.hero p{margin:16px 0 30px;color:var(--muted)}
+
 .hero-buttons{
   display:flex;
-  gap:20px;
+  gap:18px;
   justify-content:center;
   flex-wrap:wrap;
 }
 .btn{
-  padding:14px 40px;
+  padding:14px 42px;
   border-radius:50px;
   font-weight:700;
   text-decoration:none;
   display:inline-flex;
   align-items:center;
   gap:10px;
-  transition:.35s;
+  transition:transform .2s, box-shadow .2s, background .2s;
 }
 .btn-gold{
   background:linear-gradient(90deg,#f6c56b,#e7b955);
   color:#081427;
-  box-shadow:0 0 30px rgba(231,200,115,.45);
+  box-shadow:0 10px 30px rgba(231,200,115,.45);
 }
-.btn-gold:hover{
-  transform:translateY(-4px) scale(1.05);
+.btn-gold:hover,
+.btn-gold:active{
+  transform:scale(.95);
+  box-shadow:0 5px 15px rgba(231,200,115,.9);
 }
 .btn-outline{
   border:2px solid var(--gold);
   color:var(--gold);
 }
-.btn-outline:hover{
+.btn-outline:hover,
+.btn-outline:active{
   background:var(--gold);
   color:#081427;
+  transform:scale(.95);
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{padding:90px 8%}
-section h2{
-  text-align:center;
+h2{
+  font-family:'Playfair Display',serif;
   color:var(--gold);
-  margin-bottom:50px;
-  font-size:36px;
+  text-align:center;
+  margin-bottom:40px;
 }
 
-/* ===== SERVICES ===== */
+/* SERVICES */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -101,84 +117,68 @@ section h2{
 }
 .card{
   background:var(--bg2);
-  padding:35px;
+  padding:36px;
   border-radius:22px;
   text-align:center;
-  transition:.35s;
 }
-.card:hover{transform:translateY(-8px)}
-.card h3{color:var(--gold);margin-bottom:12px}
 
-/* ===== GALLERY SLIDER ===== */
+/* GALLERY SLIDER */
 #gallery{overflow:hidden}
-.gallery-track{
-  display:flex;
-  gap:24px;
-  animation:slide 18s linear infinite;
+.slider{
+  overflow:hidden;
 }
-.gallery-track img{
-  width:380px;
-  height:260px;
+.slider-track{
+  display:flex;
+  gap:20px;
+  animation:slide 12s linear infinite;
+}
+.slider-track img{
+  width:320px;
+  height:220px;
   object-fit:cover;
-  border-radius:22px;
-  box-shadow:0 20px 50px rgba(0,0,0,.6);
+  border-radius:18px;
+  flex-shrink:0;
 }
 @keyframes slide{
   0%{transform:translateX(0)}
   100%{transform:translateX(-50%)}
 }
+@media(max-width:900px){
+  .slider-track{animation-duration:8s;}
+}
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
   align-items:center;
 }
-iframe{
+.map{
   width:100%;
   height:360px;
   border:0;
   border-radius:22px;
 }
-.certificate{
+.cert{
   background:var(--bg2);
   padding:20px;
   border-radius:22px;
-  text-align:center;
+  border-left:4px solid var(--gold);
 }
-.certificate img{
-  width:100%;
-  border-radius:16px;
-}
+.cert img{width:100%;border-radius:14px}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
-  text-align:center;
-  padding:40px 8%;
-  background:#050e1b;
   margin-top:80px;
-}
-.footer-links{
-  margin-top:20px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-.ig{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--gold);
-  text-decoration:none;
-  font-weight:700;
+  padding:40px 8%;
+  background:#050E1B;
+  text-align:center;
+  color:var(--muted);
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:900px){
   .contact{grid-template-columns:1fr}
-  .gallery-track img{width:300px;height:220px}
 }
 </style>
 </head>
@@ -214,17 +214,19 @@ footer{
 <!-- GALLERY -->
 <section id="gallery">
 <h2>Galereya</h2>
-<div class="gallery-track">
-  <img src="images/gallery-1.jpg">
-  <img src="images/gallery-2.jpg">
-  <img src="images/gallery-3.jpg">
-  <img src="images/gallery-4.jpg">
-  <img src="images/gallery-5.jpg">
-  <img src="images/gallery-6.jpg">
-  <!-- duplicate -->
-  <img src="images/gallery-1.jpg">
-  <img src="images/gallery-2.jpg">
-  <img src="images/gallery-3.jpg">
+<div class="slider">
+  <div class="slider-track">
+    <img src="images/gallery-1.jpg">
+    <img src="images/gallery-2.jpg">
+    <img src="images/gallery-3.jpg">
+    <img src="images/gallery-4.jpg">
+    <img src="images/gallery-5.jpg">
+    <img src="images/gallery-6.jpg">
+    <!-- duplicate -->
+    <img src="images/gallery-1.jpg">
+    <img src="images/gallery-2.jpg">
+    <img src="images/gallery-3.jpg">
+  </div>
 </div>
 </section>
 
@@ -232,26 +234,24 @@ footer{
 <section id="contact">
 <h2>Aloqa</h2>
 <div class="contact">
-  <iframe src="https://www.google.com/maps?q=Andijan&output=embed"></iframe>
+  <iframe
+    class="map"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=Andijon%20Semashqo%20kochasi%2010&output=embed">
+  </iframe>
 
-  <div class="certificate">
-    <img src="images/certificate.jpg" alt="Premium sertifikat">
+  <div class="cert">
+    <img src="images/certificate.jpg" alt="Rasmiy sertifikat">
   </div>
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p><b>Manzil:</b> Andijon sh., S. Mashqoq ko‘chasi 10</p>
+  <p><b>Manzil:</b> Andijon shahar, Semashqo ko‘chasi 10</p>
   <p><b>Telefon:</b> +998 90 544 47 44</p>
-  <div class="footer-links">
-    <a class="ig" href="https://www.instagram.com/guzal_estetikaa" target="_blank">
-      <i class="fa-brands fa-instagram"></i> @guzal_estetikaa
-    </a>
-  </div>
-  <p style="margin-top:20px;color:#888">© 2026 GÜZAL ESTETIKA</p>
+  <p>© 2026 GÜZAL ESTETIKA</p>
 </footer>
 
 </body>
 </html>
-
